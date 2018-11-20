@@ -38,6 +38,19 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
+    <div th:if="${jobs !=null}">
+    <h4 th:text="${jobs.size()} + ' Found'"></h4>
+
+        <table th:each="job : ${jobs}" th:class="job-listing">
+            <tr th:each="item : ${job}">
+                <td th:text="${item.key}"></td>
+                <td th:text="${item.value}"></td>
+            </tr>
+
+        </table>
+    </div>
+
+
 </div>
 
 </body>
